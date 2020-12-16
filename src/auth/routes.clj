@@ -14,12 +14,12 @@
 
 
 (def auth-routes
-  [["/users" {:get handlers/ping}]
+  [["/users" {:get handlers/get-all-users}]
    ["/login" {:post {:parameters {:body {:username s/Str
                                          :password s/Str}}
-                     :handler dummy-handler}}]
+                     :handler handlers/login}}]
 
    ["/register" {:post {:parameters {:body {:username s/Str
                                          :password s/Str
                                          :email s/Str}}
-                     :handler dummy-handler}}]])
+                     :handler handlers/register}}]])
